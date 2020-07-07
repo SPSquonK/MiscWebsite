@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SP SquonK</title>
+        <style>
+			@font-face {
+				font-family: 'DemolitionCrack';
+				src: url('Demolition Crack.ttf');
+			}
+
+            .miniicon {
+                width: 16px;
+                height: 16px;
+            }
+
+            table#website_table {
+                border: 1px black solid;
+                border-collapse: collapse;
+                text-align: center;
+            }
+
+            #website_table th {
+                background-color: black;
+                color: white;
+            }
+
+            body {
+                background-color: lightblue;
+            }
+
+            #container {
+                max-width: 800px;
+                margin: auto;
+                background-color: white;
+                padding: 1em;
+            }
+
+            h1 {
+                text-align: center;
+                				padding-top: 20px;
+				padding-left: 50px;
+				color: rgb(0, 128, 255);
+				 text-shadow: rgb(0, 79, 157) 0px 2px, rgb(0, 79, 157) 2px 0px, rgb(0, 79, 157) -2px 0px, 
+    rgb(0, 79, 157) 0px -2px, rgb(0, 79, 157) -1.4px -1.4px, rgb(0, 79, 157) 1.4px 1.4px, 
+    rgb(0, 79, 157) 1.4px -1.4px, rgb(0, 79, 157) -1.4px 1.4px; 
+				font-family: "DemolitionCrack", Times, serif;
+            }
+        </style>
+    </head>
+    <body onload="renderWebsiteList()">
+        <div id="container">
+            <header>
+                <h1>SP SQUONK</h1>
+            </header>
+            <section>
+                <h2>Mes sites web</h2>
+                <table id="website_table">
+                </table>
+            </section>
+            <section>
+                <h2>Speedrun</h2>
+                <p>
+                    Il m'arrive parfois de speedrunner des jeux, à la hauteur de mon
+                    manque de talent et de dévouement à la tâche.
+                </p>
+                <table>
+                    <tr>
+                        <th>Jeu</th>
+                        <th>Console</th>
+                        <th>Catégorie</th>
+                        <th>Temps</th>
+                        <th>Video</th>
+                    </tr>
+                    <tr>
+                        <td>Golden Sun 2</td>
+                        <td>GBA - Emulateur</td>
+                        <td>Any% No Retreat Glitch</td>
+                        <td>8:12:52</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Pokemon X</td>
+                        <td>3DS</td>
+                        <td>Any%</td>
+                        <td>4:44:45</td>
+                        <td>Pas de Capture Card</td>
+                    </tr>
+                    <tr>
+                        <td>Pokemon Rubis Omega</td>
+                        <td>3DS</td>
+                        <td>Any%</td>
+                        <td>&lt; 4h</td>
+                        <td>Pas de Capture Card</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">Aëdemphia</td>
+                        <td rowspan="2">PC Windows</td>
+                        <td>v9.7 Any%</td>
+                        <td>3:22:29</td>
+                        <td><a href="https://www.youtube.com/watch?v=gPFXxIs5vQY">Youtube</a></td>
+                    </tr>
+                    <tr>
+                        <td>v9.8 Any%</td>
+                        <td>3:33:40</td>
+                        <td><a href="https://youtu.be/ugpn5_UzCBQ">Youtube</a></td>
+                    </tr>
+                    <tr>
+                        <td>MegaDimension Neptunia Victory 2</td>
+                        <td>PC Windows</td>
+                        <td>Any%</td>
+                        <td>1:55:58</td>
+                        <td><a href="https://www.youtube.com/watch?v=70hFK6oMTgE">Youtube</a></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">Le 78/3</td>
+                        <td rowspan="2">PC Windows</td>
+                        <td>Any%</td>
+                        <td>9:58</td>
+                        <td><a href="https://youtu.be/qdGXMzab2mM">Youtube</a></td>
+                    </tr>
+                    <tr>
+                        <td>Goddess%</td>
+                        <td>12:35</td>
+                        <td><a href="https://www.youtube.com/watch?v=p8DMCG0oKR8">Youtube</a></td>
+                    </tr>
+                    <tr>
+                        <td>Mighty Morphin Power Rangers</td>
+                        <td>Genesis - Emulateur</td>
+                        <td>Any%</td>
+                        <td>5:33</td>
+                        <td><a href="https://www.youtube.com/watch?v=r4UiKUof_hs">Youtube</a></td>
+                    </tr>
+                </table>
+
+            </section>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/mustache@4.0.1/mustache.min.js"></script>
+        <script type="x-tmpl-mustache" id="template-website">
+            {{#.}}
+                <tr>
+                    <th colspan=2>{{ l }}</td>
+                </tr>
+                {{#c}}
+                    <tr>
+                        <td><a href="{{ link }}"><img src="icones/{{ image }}" class="miniicon"></a></td>
+                        <td>
+                            <a href="{{ link }}">{{ title }}</a>
+                        </td>
+                    </tr>
+                {{/c}}
+            {{/.}}
+        </script>
+        
+        <script type="text/javascript">
+            function renderWebsiteList() {
+                let web_list = [
+                    { "l": "Memes", "c" : [
+                        { image: "annie.png"      , link: "https://www.annie.moe"                                          , title: "Annie.moe"          },
+                        { image: "Moe.png"        , link: "https://www.squonK.moe"                                         , title: "SquonK.moe"         },
+                        { image: ""               , link: "https://maudit.squonk.moe"                                      , title: "Maudit"             }
+                    ]},
+                    { "l": "Contenu", "c" : [
+                        { image: "wordpress.png"  , link: "https://blog.squonk.fr"                                         , title: "Skyblog"            },
+                        { image: "lama.jpg"       , link: "https://img.squonk.moe"                                         , title: "Gallerie"           },
+                        { image: "26.png"         , link: "http://www.deuxsix.fr/"                                         , title: "Le Deux Six"        },
+                        { image: "zurithor.png"   , link: "http://zurithor.squonk.moe/"                                    , title: "Les hommes bleus"   },
+                        { image: ""               , link: "https://www.sà.fr"                                              , title: "Dev Blog de SFlyFF" },
+                        { image: ""               , link: "https://www.github.com/SPSquonK"                                , title: "Github"             }
+                    ]},
+                    { "l": "Media", "c" : [
+                        { image: "AniList.svg"    , link: "https://anilist.co/user/SquonK/"                                , title: "AniList"            },
+                        { image: "SC.jpg"         , link: "http://www.senscritique.com/SquonK"                             , title: "SensCritique"       },
+                        { image: "steam.png  "    , link: "http://steamcommunity.com/id/spsquonk/"                         , title: "Steam"              }
+                    ]},
+                    { "l": "Réseaux Sociaux", "c" : [
+                        { image: "twitter.png"    , link: "https://twitter.com/spsquonk"                                   , title: "Twitter"            },
+                        { image: "YoutubeAZAF.png", link: "https://www.youtube.com/channel/UCwMBM2g3WDJPp750II5GDVw/videos", title: "Youtube"            },
+                        { image: "Twitch.png"     , link: "http://www.twitch.tv/sp_squonk"                                 , title: "Twitch"             }
+                    ]}
+                ];
+                
+                let template = document.getElementById("template-website").innerText;
+                let rendered = Mustache.render(template, web_list);
+                document.getElementById("website_table").innerHTML = rendered;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,409 @@
+<html>
+	<head>
+		<title>SP SquonK</title>
+		<meta name="description" content="Page personnelle de SquonK, vénérateur des lamas et fan de chasse-neige" />
+		<meta charset="utf-8" />
+		<style>
+			body {
+				background-color: rgb(168, 211, 255);
+			}
+			
+			#main {
+				margin: auto;
+
+				left: 50%;
+				transform: translate(-50%, 0%);
+				position: absolute;
+				background-color: white;
+
+				max-width: 800px;
+				width: 100%;
+				
+				border: 5px solid rgb(0, 0, 210);
+				border-radius: 6px;
+				box-shadow: 2px 2px 2px rgb(0, 0, 130), -2px 2px 2px rgb(0, 0, 130), 2px -2px 2px rgb(0, 0, 130), -2px -2px 2px rgb(0, 0, 130);
+			}
+			
+			
+			
+			#presentation {
+				margin: 1em;
+			}
+			
+			@font-face {
+				font-family: 'DemolitionCrack';
+				src: url('Demolition Crack.ttf');
+			}
+			
+			h1 {
+				text-align: center;
+				padding-top: 20px;
+
+				color: rgb(0, 128, 255);
+				 text-shadow: rgb(0, 79, 157) 0px 2px, rgb(0, 79, 157) 2px 0px, rgb(0, 79, 157) -2px 0px, 
+    rgb(0, 79, 157) 0px -2px, rgb(0, 79, 157) -1.4px -1.4px, rgb(0, 79, 157) 1.4px 1.4px, 
+    rgb(0, 79, 157) 1.4px -1.4px, rgb(0, 79, 157) -1.4px 1.4px; 
+				font-family: "DemolitionCrack", Times, serif;
+			}
+
+			.othernames {
+				text-align: center;
+				font-size: 1.1em;
+				color: white;
+				 text-shadow: rgb(0, 30, 60) 0px 2px, rgb(0, 30, 60) 2px 0px, rgb(0, 30, 60) -2px 0px, 
+    rgb(0, 30, 60) 0px -2px, rgb(0, 30, 60) -1.4px -1.4px, rgb(0, 30, 60) 1.4px 1.4px, 
+    rgb(0, 30, 60) 1.4px -1.4px, rgb(0, 30, 60) -1.4px 1.4px; 
+				margin-bottom: 0;
+			}
+			
+			li {
+				vertical-align: middle;
+				margin-bottom: 2px;
+			}
+	
+			
+			li a {
+				text-decoration: none;
+				font-size: 16px;
+				color: rgb(0,0,81);
+			}
+			
+			li a:hover{
+				color: rgb(0,0,120);
+				font-weight: bold;
+			}
+			
+			ul {
+				list-style: none;
+				margin-left: 50px;
+			}
+			
+			
+			h2 {
+				border-top: 0.1em darkblue solid;
+				padding-top: 0.2em;
+				text-align: center;
+				color: darkblue;
+				font-family: Times, serif;
+				
+				text-transform: uppercase;
+				font-size: 1.6em;
+				
+				text-shadow:
+			0 1px 0 #99e,
+             0 2px 0 #BBBBe5,
+             -1px 3px 0 #AAAAC8,
+             -1px 4px 0 #9999C1,
+             -2px 5px 0 #8888B9,
+             -2px 6px 0 #7777B2;
+			}
+			
+			#contact {
+				font-size: 0.8em;
+				color: rgb(72, 164, 255);
+				text-align: center;
+			}
+			
+			
+			#divjeu, #tempsspeedrun {
+				position: fixed;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				text-align: center;
+				background-color: white;
+				padding: 10px;
+				border: 3px solid rgb(0, 0, 210);
+				border-radius: 3px;
+				box-shadow: 2px 2px 2px rgb(0, 0, 130), -2px 2px 2px rgb(0, 0, 130), 2px -2px 2px rgb(0, 0, 130), -2px -2px 2px rgb(0, 0, 130);
+				width: 60%;
+				height: 500px;
+				
+				display: none;
+			}
+			
+			#divjeu table {
+				margin:auto;
+			}
+			
+			
+			.gamea {
+				color: darkblue;
+				font-weight: bold;
+				text-decoration: none;
+			}
+			
+			.over {
+				position: absolute;
+				width: 250px;
+				border: 2px darkblue solid;
+				text-align: center;
+				margin-left: 500px;
+				margin-top: 30px;
+				font-size: 12px;
+			}
+			
+			.over2 {
+				position: absolute;
+				width: 250px;
+				border: 2px darkblue solid;
+				text-align: center;
+				margin-left: 800px;
+				margin-top: 30px;
+				font-size: 12px;
+			}
+			
+			#tempsspeedrun table {
+				margin:auto;
+				border: 3px black solid;
+				text-align: center;
+				border-collapse: collapse;
+			}
+			
+			#tempsspeedrun tr {
+				border: 1px black solid;
+			}
+		</style>
+
+		<style>
+			#website_table {
+				background-color: lightcyan;
+				margin: auto;
+				border-collapse: collapse;
+			}
+
+			#website_table table, #website_table tr {
+				border: 1px black solid;
+			}
+
+			#website_table td {
+				height: 30px;
+			}
+
+			#website_table th {
+				font-size: 1.3em;
+				background-color: lightblue;
+			}
+
+			#website_table td.title {
+				width: 20em;
+				text-align: center;
+			}
+
+			#website_table a {
+				text-decoration: none;
+				color: darkblue;
+			}
+
+			#website_table a:hover {
+				font-weight: bold;
+			}
+
+			#website_table img {
+				font-weight: bold;
+			}
+
+			#website_table img {
+				width: 30px;
+				padding-bottom: 0px;
+				vertical-align: middle;
+			}
+
+		</style>
+		
+		<link rel="stylesheet" type="text/css" href="game.css" />
+	</head>
+
+	<body onload="onload()">
+		<div id="main">
+			<div id="presentation">
+				<h1>SP SQUONK</h1> <!-- / Shiho / PsY / Lama / S Smile / Gigamaxed Porygon -->
+				<p class="othernames"><span style="font-size:1.5em">Shiho - PsY</span>
+					<br>Lama - S Smile - Gigamaxed Porygon</p>
+				
+				<p style="text-align: center;">(Elle pique les yeux un peu cette version du site)</p>
+
+				<h2>Mes sites</h2>
+                <table id="website_table"></table>
+				
+				<h2>Speedrun</h2>
+
+				<table>
+					<tr>
+						<th>Jeu</th>
+						<th>Console</th>
+						<th>Catégorie</th>
+						<th>Temps</th>
+						<th>Video</th>
+					</tr>
+					<tr>
+						<td>Golden Sun 2</td>
+						<td>GBA - Emulateur</td>
+						<td>Any% No Retreat Glitch</td>
+						<td>8:12:52</td>
+						<td>-</td>
+					</tr>
+					<tr>
+						<td>Pokemon X</td>
+						<td>3DS</td>
+						<td>Any%</td>
+						<td>4:44:45</td>
+						<td>Pas de Capture Card</td>
+					</tr>
+					<tr>
+						<td>Pokemon Rubis Omega</td>
+						<td>3DS</td>
+						<td>Any%</td>
+						<td>&lt; 4h</td>
+						<td>Pas de Capture Card</td>
+					</tr>
+					<tr>
+						<td rowspan="2">Aëdemphia</td>
+						<td rowspan="2">PC Windows</td>
+						<td>v9.7 Any%</td>
+						<td>3:22:29</td>
+						<td><a href="https://www.youtube.com/watch?v=gPFXxIs5vQY">Youtube</a></td>
+					</tr>
+					<tr>
+						<td>v9.8 Any%</td>
+						<td>3:33:40</td>
+						<td><a href="https://youtu.be/ugpn5_UzCBQ">Youtube</a></td>
+					</tr>
+					<tr>
+						<td>MegaDimension Neptunia Victory 2</td>
+						<td>PC Windows</td>
+						<td>Any%</td>
+						<td>1:55:58</td>
+						<td><a href="https://www.youtube.com/watch?v=70hFK6oMTgE">Youtube</a></td>
+					</tr>
+					<tr>
+						<td rowspan="2">Le 78/3</td>
+						<td rowspan="2">PC Windows</td>
+						<td>Any%</td>
+						<td>9:58</td>
+						<td><a href="https://youtu.be/qdGXMzab2mM">Youtube</a></td>
+					</tr>
+					<tr>
+						<td>Goddess%</td>
+						<td>12:35</td>
+						<td><a href="https://www.youtube.com/watch?v=p8DMCG0oKR8">Youtube</a></td>
+					</tr>
+					<tr>
+						<td>Mighty Morphin Power Rangers</td>
+						<td>Genesis - Emulateur</td>
+						<td>Any%</td>
+						<td>5:33</td>
+						<td><a href="https://www.youtube.com/watch?v=r4UiKUof_hs">Youtube</a></td>
+					</tr>
+				</table>
+				
+				<p>Ne possédant pas de capture card, je n'ai pas de vidéo de mes runs des jeux sur 3DS.
+				<br />De plus, comme je suis très bien organisé, j'ai aucune idée d'où est inscrit mon temps sur Pokémon ORAS
+				<br />(En vrai comme j'ai une capture card maintenant je devrais faire les speedrun de ces jeux)</p>
+
+				<p>Oui j'ai speedrun mon propre jeu. u mad ?</p>
+				
+				<h2>A la conquête de l'être aimée</h2>
+				<p>• Comment jouer •
+					<br />Appuyez sur les flèches de votre clavier</p>
+					<table id="game">
+					</table>
+					<p id="textePretencieux">Je cherche une femelle pour transmettre au futur ma puissance.
+					<br />Mais comme je veux aussi une femelle puissante, si tu penses en être une, je t'invite à jouer à ce petit jeu.
+					<br />Le but est simple : il faut que la ligne du haut soit entièrement noir.</p>
+
+					Comme c'est totalmeent con d'utiliser les flèches sur ce site, mettre ZQSD
+
+				<h2>Contact</h2>
+				<p>Mail : sp symbole avec le a entouré sqk.fr
+					<br>Discord : SquonK#2296
+				</p>
+			</div>	
+		</div>
+		
+	</body>
+	<!--<script src="game.js"></script>
+	<script>
+		function lancerJeu() {
+			if (document.getElementById("divjeu").style.display == "block") {
+				fermerJeu();
+				return;
+			}
+		
+			initialiserJeu();
+			
+			document.getElementById("divjeu").style.display = "block"
+			fermerSpeedRun();
+		}
+		
+		function fermerJeu() {
+			listenerActiv = false;
+			document.getElementById("divjeu").style.display = "none";
+		}
+		
+		function lancerSpeedrun() {
+			if (document.getElementById("tempsspeedrun").style.display == "block") {
+				fermerSpeedRun();
+				return;
+			}
+		
+			document.getElementById("tempsspeedrun").style.display = "block";
+			fermerJeu();
+		}
+		
+		function fermerSpeedRun() {
+			document.getElementById("tempsspeedrun").style.display = "none";
+		}
+	</script>
+-->
+	<script src="https://cdn.jsdelivr.net/npm/mustache@4.0.1/mustache.min.js"></script>
+	<script type="x-tmpl-mustache" id="template-website">
+		{{#.}}
+			<tr>
+				<th></th><th>{{ l }}</td>
+			</tr>
+			{{#c}}
+				<tr>
+					<td><a href="{{ link }}"><img src="icones/{{ image }}" class="miniicon"></a></td>
+					<td class="title">
+						<a href="{{ link }}">{{ title }}</a>
+					</td>
+				</tr>
+			{{/c}}
+		{{/.}}
+	</script>
+	
+	<script type="text/javascript">
+		function onload() {
+			let web_list = [
+				{ "l": "Memes", "c" : [
+					{ image: "annie.png"      , link: "https://www.annie.moe"                                          , title: "Annie.moe"          },
+					{ image: "Moe.png"        , link: "https://www.squonK.moe"                                         , title: "SquonK.moe"         },
+					{ image: ""               , link: "https://maudit.squonk.moe"                                      , title: "Maudit"             }
+				]},
+				{ "l": "Contenu", "c" : [
+					{ image: "wordpress.png"  , link: "https://blog.squonk.fr"                                         , title: "Skyblog"            },
+					{ image: "lama.jpg"       , link: "https://img.squonk.moe"                                         , title: "Galerie"            },
+					{ image: "26.png"         , link: "http://www.deuxsix.fr/"                                         , title: "Le Deux Six"        },
+					{ image: "zurithor.png"   , link: "http://zurithor.squonk.moe/"                                    , title: "Les hommes bleus"   },
+					{ image: ""               , link: "https://www.sà.fr"                                              , title: "Dev Blog de SFlyFF" },
+					{ image: ""               , link: "https://www.github.com/SPSquonK"                                , title: "Github"             }
+				]},
+				{ "l": "Media", "c" : [
+					{ image: "AniList.svg"    , link: "https://anilist.co/user/SquonK/"                                , title: "AniList"            },
+					{ image: "SC.jpg"         , link: "http://www.senscritique.com/SquonK"                             , title: "SensCritique"       },
+					{ image: "steam.png  "    , link: "http://steamcommunity.com/id/spsquonk/"                         , title: "Steam"              }
+				]},
+				{ "l": "Réseaux Sociaux", "c" : [
+					{ image: "twitter.png"    , link: "https://twitter.com/spsquonk"                                   , title: "Twitter"            },
+					{ image: "YoutubeAZAF.png", link: "https://www.youtube.com/channel/UCwMBM2g3WDJPp750II5GDVw/videos", title: "Youtube"            },
+					{ image: "Twitch.png"     , link: "http://www.twitch.tv/sp_squonk"                                 , title: "Twitch"             }
+				]}
+			];
+			
+			let template = document.getElementById("template-website").innerText;
+			let rendered = Mustache.render(template, web_list);
+			document.getElementById("website_table").innerHTML = rendered;
+		}
+	</script>
+</html>
