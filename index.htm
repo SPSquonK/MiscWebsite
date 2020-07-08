@@ -22,6 +22,11 @@
 				border: 5px solid rgb(0, 0, 210);
 				border-radius: 6px;
 				box-shadow: 2px 2px 2px rgb(0, 0, 130), -2px 2px 2px rgb(0, 0, 130), 2px -2px 2px rgb(0, 0, 130), -2px -2px 2px rgb(0, 0, 130);
+
+				background-image: url("DeuxSix.png");
+				background-position-y: bottom;
+				background-repeat: no-repeat;
+				background-position-x: center;
 			}
 			
 			
@@ -49,10 +54,11 @@
 			.othernames {
 				text-align: center;
 				font-size: 1.1em;
-				color: white;
-				 text-shadow: rgb(0, 30, 60) 0px 2px, rgb(0, 30, 60) 2px 0px, rgb(0, 30, 60) -2px 0px, 
-    rgb(0, 30, 60) 0px -2px, rgb(0, 30, 60) -1.4px -1.4px, rgb(0, 30, 60) 1.4px 1.4px, 
-    rgb(0, 30, 60) 1.4px -1.4px, rgb(0, 30, 60) -1.4px 1.4px; 
+				color: darkblue;
+				font-weight: bold;
+//				 text-shadow: rgb(0, 30, 60) 0px 2px, rgb(0, 30, 60) 2px 0px, rgb(0, 30, 60) -2px 0px, 
+//    rgb(0, 30, 60) 0px -2px, rgb(0, 30, 60) -1.4px -1.4px, rgb(0, 30, 60) 1.4px 1.4px, 
+//    rgb(0, 30, 60) 1.4px -1.4px, rgb(0, 30, 60) -1.4px 1.4px; 
 				margin-bottom: 0;
 			}
 			
@@ -153,15 +159,19 @@
 				font-size: 12px;
 			}
 			
-			#tempsspeedrun table {
+			table#speedrun {
 				margin:auto;
 				border: 3px black solid;
 				text-align: center;
 				border-collapse: collapse;
 			}
 			
-			#tempsspeedrun tr {
+			#speedrun tr {
 				border: 1px black solid;
+			}
+
+			body {
+				text-align: center;
 			}
 		</style>
 
@@ -221,14 +231,24 @@
 				<p class="othernames"><span style="font-size:1.5em">Shiho - PsY</span>
 					<br>Lama - S Smile - Gigamaxed Porygon</p>
 				
-				<p style="text-align: center;">(Elle pique les yeux un peu cette version du site)</p>
+				<h2>Présentation</h2>
+				<!--<p>Quand tu regardes mon site tu vois quoi ?
+					<br>Tu vois rien parce qu'il y a rien. Il y a pas d'amour, il y a pas de pitié, il y a rien je m'en bat les couilles. Il y a que de la haine.</p>-->
+
+				<p>Bonjour à toi jeune entrepreneur. Si aujourd'hui je me permet de te contacter c'est pour une
+					raison très simple. Savais-tu que 99% de la population ne connaissait pas mon oeuvre ? Alors poses toi les bonnes questions.
+					Est-ce que tu préfères continuer à être un ignorant qui regarde la télé, ou commencer très
+					rapidement à te cultiver avec moi et avoir l'opportunité de jouer au <a href="https://www.deuxsix.fr">Deux Six</a> ?
+					Moi je pense la question elle est vite répondue. Alors soit tu me suis, soit tu continues
+					à jouer au dernier jeu du moment. Bisous.
+				</p>
 
 				<h2>Mes sites</h2>
                 <table id="website_table"></table>
 				
 				<h2>Speedrun</h2>
 
-				<table>
+				<table id="speedrun">
 					<tr>
 						<th>Jeu</th>
 						<th>Console</th>
@@ -304,58 +324,31 @@
 				<p>Oui j'ai speedrun mon propre jeu. u mad ?</p>
 				
 				<h2>A la conquête de l'être aimée</h2>
-				<p>• Comment jouer •
-					<br />Appuyez sur les flèches de votre clavier</p>
+				<p><strong>• Comment jouer •</strong>
+					<br />Appuyez sur ZQSD pour jouer au jeu</p>
 					<table id="game">
 					</table>
 					<p id="textePretencieux">Je cherche une femelle pour transmettre au futur ma puissance.
 					<br />Mais comme je veux aussi une femelle puissante, si tu penses en être une, je t'invite à jouer à ce petit jeu.
-					<br />Le but est simple : il faut que la ligne du haut soit entièrement noir.</p>
+					<br />Le but est simple : il faut que la ligne du haut soit entièrement noire.</p>
 
-					Comme c'est totalmeent con d'utiliser les flèches sur ce site, mettre ZQSD
 
 				<h2>Contact</h2>
-				<p>Mail : sp symbole avec le a entouré sqk.fr
-					<br>Discord : SquonK#2296
+				<p><em>Mail</em> : sp symbole avec le a entouré sqk.fr
+					<br><em>Discord</em> : SquonK#2296
 				</p>
+
+				<h2></h2>
+				<div style="height: 550px;"></div>
 			</div>	
 		</div>
 		
 	</body>
-	<!--<script src="game.js"></script>
+	<script src="game.js"></script>
 	<script>
-		function lancerJeu() {
-			if (document.getElementById("divjeu").style.display == "block") {
-				fermerJeu();
-				return;
-			}
-		
-			initialiserJeu();
-			
-			document.getElementById("divjeu").style.display = "block"
-			fermerSpeedRun();
-		}
-		
-		function fermerJeu() {
-			listenerActiv = false;
-			document.getElementById("divjeu").style.display = "none";
-		}
-		
-		function lancerSpeedrun() {
-			if (document.getElementById("tempsspeedrun").style.display == "block") {
-				fermerSpeedRun();
-				return;
-			}
-		
-			document.getElementById("tempsspeedrun").style.display = "block";
-			fermerJeu();
-		}
-		
-		function fermerSpeedRun() {
-			document.getElementById("tempsspeedrun").style.display = "none";
-		}
+		initialiserJeu();
 	</script>
--->
+	
 	<script src="https://cdn.jsdelivr.net/npm/mustache@4.0.1/mustache.min.js"></script>
 	<script type="x-tmpl-mustache" id="template-website">
 		{{#.}}
@@ -364,7 +357,11 @@
 			</tr>
 			{{#c}}
 				<tr>
-					<td><a href="{{ link }}"><img src="icones/{{ image }}" class="miniicon"></a></td>
+					<td><a href="{{ link }}">
+						{{#image}}
+							<img src="icones/{{ image }}" {{{style}}}></a>
+						{{/image}}
+					</td>
 					<td class="title">
 						<a href="{{ link }}">{{ title }}</a>
 					</td>
@@ -386,11 +383,11 @@
 					{ image: "lama.jpg"       , link: "https://img.squonk.moe"                                         , title: "Galerie"            },
 					{ image: "26.png"         , link: "http://www.deuxsix.fr/"                                         , title: "Le Deux Six"        },
 					{ image: "zurithor.png"   , link: "http://zurithor.squonk.moe/"                                    , title: "Les hommes bleus"   },
-					{ image: ""               , link: "https://www.sà.fr"                                              , title: "Dev Blog de SFlyFF" },
-					{ image: ""               , link: "https://www.github.com/SPSquonK"                                , title: "Github"             }
+					{ image: "sflyff.png"     , link: "https://www.sà.fr"                                              , title: "Dev Blog de SFlyFF" },
+					{ image: "Github.png"     , link: "https://www.github.com/SPSquonK"                                , title: "Github"             }
 				]},
 				{ "l": "Media", "c" : [
-					{ image: "AniList.svg"    , link: "https://anilist.co/user/SquonK/"                                , title: "AniList"            },
+					{ image: "AniList.svg"    , link: "https://anilist.co/user/SquonK/"                                , title: "AniList"            , style: " style='background-color: black;'"},
 					{ image: "SC.jpg"         , link: "http://www.senscritique.com/SquonK"                             , title: "SensCritique"       },
 					{ image: "steam.png  "    , link: "http://steamcommunity.com/id/spsquonk/"                         , title: "Steam"              }
 				]},
