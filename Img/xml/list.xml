@@ -1,0 +1,14 @@
+<categories>
+	<categorie>
+		<id>0</id>
+		<fichier>vanilla.xml</fichier>
+		<prefixe>img/vanilla/</prefixe>
+		<nom>Images pas drôles en vrac</nom>
+	</categorie>
+	<categorie>
+		<id>1</id>
+		<fichier>meganep.xml</fichier>
+		<prefixe>img/meganep/</prefixe>
+		<nom>Screenshot Hyperdimension Neptunia</nom>
+	</categorie>
+</categories>
