@@ -1,0 +1,119 @@
+body {
+    background: black;
+}
+
+#content {
+    background: lightblue;
+    border: 5px solid darkblue;
+    border-radius: 15px;
+    width: 80%;
+    margin: auto;
+}
+
+header {
+    text-align: center;
+}
+
+footer {
+    text-align: right;
+    padding-right: 10px;
+    font-size: x-small;
+    font-variant: small-caps;
+}
+
+hr {
+    color: darkblue;
+}
+
+h3 {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    background-color: blue;
+    border-radius: 10px;
+    color: white;
+    position: relative;
+    top: -0.6em;
+    margin-bottom: -0.6em;
+}
+
+article {
+    width: 80%;
+    margin: auto;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+article p {
+    text-indent: 2em;
+}
+
+article {
+    margin-top: 2em;
+    background-color: white;
+    border-radius: 10px;
+/* display: clear; */
+}
+
+aside {
+    float: right;
+    width: 200px;
+    padding: 10px;
+}
+
+aside table, aside table td {
+    border: 1px black solid;
+}
+
+aside table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+aside table td {
+    width: 50%;
+}
+
+aside table tr td:nth-child(1) {
+    font-weight: bold;
+}
+
+.down {
+    vertical-align: bottom;
+}
+
+article table {
+    width: 100%;
+}
+
+header {
+    background: center no-repeat url('titre.png');
+    width: 100%;
+    height: 200px;
+}
+
+.taille200 {
+    display: block;
+    margin: auto;
+    width: 200px;
+}
+
+.taille100 {
+    width: 90px;
+}
+
+h2, .liens, .center {
+        text-align: center;
+}
+
+.liens a, .liens.a:hover {
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.3em;
+}
+
+td.down {
+    float: right;
+}
+
+.itw { font-style: oblique; margin-top: 1em; margin-bottom: -1em;}
