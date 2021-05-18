@@ -5,39 +5,36 @@ const TABLE_IDENTIFIER			= '#memeenmeufjesuissurquejsuisunebonne';
 /* La liste des catégories */
 const NEPGEAR_DID_NOTHING_WRONG	= '#nepgeardidnothingwrong';
 /* Le fichier xml qui contient les catégories */
-const LIST_XML					= 'xml/list.xml';
+const LIST_XML					= 'xml/categories.json';
 
 // Base de données contenant toutes les catégories d'image
 class Database {
 	// Constructeur vide
-	constructor(nomDuFichierXML) {
-		this.databaseList		= [];
-		this.currentDatabase	= undefined;
+	constructor(categoriesPath) {
+		this.databaseList    = {};
+		this.currentDatabase = undefined;
 		
 		// Charge la base de données via le fichier xml donné
-		let that = this;
 		$.ajax({
 			type : 'GET',
-			url  : nomDuFichierXML
-		}).done(function (data) {
+			url  : categoriesPath,
+			dataType: "json"
+		}).done(data => {
 			// Remplir la liste des bases de données
-			$(data).find('categorie').each(function() { 
-				that.databaseList.push(new Categorie($(this)));
-			});
+			data.categories.map(category => [category.id, new Categorie(category)])
+				.forEach(cat => this.databaseList[cat[0]] = cat[1]);
 
 			// Charger la première catégorie
-			if (that.databaseList.length != 0) {
-				that.setCurrentDb(0);
-			}
+			this.setCurrentDb(data.defaultCategory);
 
 			// Faire le rendu de la liste des catégories
-			$(NEPGEAR_DID_NOTHING_WRONG).html(that.getRenderCategoryList());
+			$(NEPGEAR_DID_NOTHING_WRONG).html(this.getRenderCategoryList());
 		});
 	}
 	
 	// Crée une liste de liens vers les différentes catégories
 	getRenderCategoryList() {
-		return '| ' + this.databaseList.map(cat => cat.getli()).join(" | ") + ' |';
+		return '| ' + Object.values(this.databaseList).map(cat => cat.getli()).join(" | ") + ' |';
 	}
 
 	// Créer du code html pour mettre dans un table
@@ -52,7 +49,9 @@ class Database {
 	// Modifie la base de données actuellement chargée
 	setCurrentDb(number) {
 		this.currentDatabase = this.databaseList[number];
-		this.currentDatabase.displayWithEventualLoading();
+		if (this.currentDatabase) {
+			this.currentDatabase.displayWithEventualLoading();
+		}
 	}
 	
 	currentDatabasetrier(idTri) {
@@ -62,11 +61,11 @@ class Database {
 
 // Une catégorie contiennt une banque d'images
 class Categorie {
-	constructor(elementXML) {
-		this.id      		 = elementXML.find('id').text();
-		this.fichier 		 = 'xml/' + elementXML.find('fichier').text();
-		this.prefixe 		 = elementXML.find('prefixe').text();
-		this.nom    		 = elementXML.find('nom').text();
+	constructor(dict) {
+		this.id      		 = dict.id;
+		this.fichier 		 = 'xml/' + dict.fichier;
+		this.prefixe 		 = dict.prefixe;
+		this.nom    		 = dict.nom;
 		this.associatedFiles = false;
 		this.orders			 = undefined;
 		this.colonnes		 = undefined;
@@ -82,40 +81,35 @@ class Categorie {
 	}
 	
 	chargerUneListeDimage(callback) {
-		var that = this;
-	
 		$.ajax({
 			type    : 'GET',
 			url		: this.fichier,
 			dataType: "json"
 		})
-		.done(function (data) {
-			let columns = Column.generateColumnsArray(data.colonnes || []);
-			let ordering = Ordering.generateOrderingArray(data.ordres || [] , columns);
-			let defaultOrder = Ordering.findDefaultOrder(ordering, data.ordreParDefaut);
-			let liste = Image.makeImageList(data.images, columns);
-			
-			that.colonnes = columns;
-			that.orders = ordering;
-			that.associatedFiles = liste;
-			that.defaultOrder = defaultOrder;
-			
-			that.trier(defaultOrder);
+		.done(data => {
+			this.colonnes = Column.generateColumnsArray(data.colonnes || []);
+			this.orders = Ordering.generateOrderingArray(data.ordres || [], this.colonnes);
+			this.associatedFiles = Image.makeImageList(data.images, this.colonnes);			
+			this.trier(data.ordreParDefaut);
 			
 			callback();
 		})
-		.fail(function(_request, _error) { alert("Echec de " + this.fichier); } );
+		.fail((_request, _error) => alert("Echec de " + this.fichier));
 	};
 	
 	trier(argument) {
-		if (this.currentOrder === undefined || this.currentOrder !== argument) {
-			this.currentOrder = argument;
+		if (argument === undefined) argument = "Titre";
+		
+		const requestedOrder = this.orders.find(order => order.nom === argument);
+
+		if (this.currentOrder !== requestedOrder) {
+			this.currentOrder = requestedOrder;
+						
+			this.associatedFiles.sort(
+				(e1, e2) => Utilitaire.comparerAvecListe(e1, e2, requestedOrder.cols)
+			);
 			
-			var that = this;
-			
-			this.associatedFiles.sort(function(e1, e2) { return Utilitaire.comparerAvecListe(e1, e2, that.orders[argument].cols); });
-			
-			if (this.orders[argument].dragonAscent === false)
+			if (requestedOrder.dragonAscent === false)
 				this.associatedFiles.reverse();
 			
 		} else {
@@ -124,18 +118,14 @@ class Categorie {
 	}
 	
 	getli() {
-		return '<a href="#" onclick="setCurrentDb('+ this.id + ')" >'+ this.nom +'</a>';
+		return `<a href="#" onclick="setCurrentDb('${this.id}')" >${this.nom}</a>`;
 	}
 	
 	getTableHtml() {
-		let that = this;
-		let content = this.getColumnsHeader();
-		
-		this.associatedFiles.forEach(function (value) {
-			content += value.imageGetHTMLCodeWithCols(that.colonnes);
-		});
-		
-		return content;
+		return this.getColumnsHeader()
+			+ this.associatedFiles.map(
+				value => value.imageGetHTMLCodeWithCols(this.colonnes)
+			).join('');
 	}
 	
 	getColumnsHeader() {
@@ -156,7 +146,7 @@ class Column {
 		if (colonne === undefined) {
 			this.nom		   = 'Titre';
 			this.balise        = 'titre';
-			this.onclickAction = ' onclick="trier(0)"';
+			this.onclickAction = ' onclick="trier(\'Ban Landorus Therian pls\')"';
 		} else {
 			this.nom			= colonne.nom;
 			this.balise			= colonne.balise;
@@ -187,7 +177,7 @@ class Ordering {
 			
 			const i = columns.findIndex(col => col.balise === nomPremiereColonne);
 			if (i !== -1) {
-				columns[i].onclickAction = ' onclick="trier(' + i + ')"';
+				columns[i].onclickAction = ` onclick="trier('${this.nom}')"`;
 			}
 		}
 	}
@@ -197,15 +187,6 @@ class Ordering {
 			new Ordering(),
 			...orderingTags.map(tag => new Ordering(tag, existingColumns))
 		]
-	}
-	
-	static findDefaultOrder(orderingArray, defaultOrderInFile) {
-		if (defaultOrderInFile === undefined) {
-			return 0;
-		}
-
-		let defaultIndex = orderingArray.findIndex(ordering => ordering.nom === defaultOrderInFile);
-		return defaultIndex !== -1 ? defaultIndex : 0;
 	}
 }
 

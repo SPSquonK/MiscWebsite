@@ -1,0 +1,17 @@
+{
+  "categories": [
+    {
+      "id": "0",
+      "fichier": "vanilla.json",
+      "prefixe": "img/vanilla/",
+      "nom": "Images pas drôles en vrac"
+    },
+    {
+      "id": "1",
+      "fichier": "meganep.json",
+      "prefixe": "img/meganep/",
+      "nom": "Screenshot Hyperdimension Neptunia"
+    }
+  ],
+  "defaultCategory": "0"
+}
