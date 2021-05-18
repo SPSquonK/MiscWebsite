@@ -15,12 +15,18 @@ function array_find(callable $callback, array $array) {
 
 function fetch_json_file(string $path) {
     $string = file_get_contents($path);
-    if ($string === false) die("No " + $path + " file.");
+    if ($string === false) die("No " . $path . " file.");
     
     $json = json_decode($string, true);
     if ($json === null) die("Categories file is not a valid json");
 
     return $json;
+}
+
+// https://stackoverflow.com/a/834355
+function startsWith( $haystack, $needle ) {
+    $length = strlen( $needle );
+    return substr( $haystack, 0, $length ) === $needle;
 }
 
 $picked_category = "";
@@ -50,7 +56,7 @@ $known_files = fetch_json_file("xml/" . $the_category['fichier']);
 $tableau = array();
 if ($dossier = opendir($the_category['prefixe'])) {
 	while(false !== ($fichier = readdir($dossier))) {
-		if($fichier != '.' && $fichier != '..' && !str_starts_with($fichier, 'index')) {
+		if($fichier != '.' && $fichier != '..' && !startsWith($fichier, 'index')) {
 			$tableau[] = $fichier;
 		}
 	}
@@ -161,7 +167,7 @@ if ($dossier = opendir($the_category['prefixe'])) {
                 let output = document.getElementById("output");
                 output.value = JSON.stringify(content, null, 2);
             }
-            
+
             // TODO: dead links
         </script>
     </body>
