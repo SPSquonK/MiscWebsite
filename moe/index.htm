@@ -1,0 +1,291 @@
+﻿<!doctype HTML>
+<html>
+	<head>
+		<title>SquonK.moe</title>
+		
+		<style>
+			body {
+				background-color: white;
+				background: url('spritemoche.bmp') repeat;
+			}
+		
+			menu {
+				float:right;
+				width: 293px;
+				padding: 5px;
+				background-color: white;
+				margin-right: -10%;
+				margin-left: 30px;
+				margin-top: 5%;
+				border: black solid 2px;
+				box-shadow: 0px 10px 20px black;
+				/*position: fixed;*/
+			}
+			
+			menu h2, menu h5 {
+				text-align: center;
+			}
+			
+			header {
+				background-color: white;
+								display: table;
+				padding-left: 10%;	
+				padding-right: 10%;
+				box-shadow: 0px 10px 10px black;
+				text-align: center;
+				margin: auto;
+				border-radius: 20px;
+				margin-top: 20px;    overflow: hidden;
+			}
+			
+			section {
+				background-color: red;
+				padding-bottom: 50px;
+				box-shadow: 0px 10px 10px;
+				left: 0px;
+				margin-left: 0px;
+				padding-left: 0px;
+				background-color: rgb(230, 230, 230);
+				box-shadow-color: rgb(210, 210, 210);
+				padding-left: 30px;
+			}
+			
+			section:nth-child(2n+2) {
+				background-color: rgb(210, 210, 210);
+				box-shadow-color: rgb(190, 190, 190);
+			}
+			body {
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			body {
+				width: 80%;
+				margin: auto;
+			}
+			
+			section h2 {
+				color: rgb(100, 45, 100);
+				text-shadow: 2px 2px rgb(211, 156, 211);
+				padding-left: 20px;
+				/*box-shadow: 0px 5px 0px rgb(211, 156, 211);*/
+				border-bottom: solid rgb(100, 45, 100) 3px;
+				border-bottom-left-radius: 10px;
+			}
+			
+			menu h2 {
+				color: rgb(100, 45, 100);
+				margin-top: 0px;
+			}
+			
+			footer {
+				text-align: right;
+				color: rgb(80,80,80);
+			}
+			
+			footer h5, footer h6, footer h4 {
+				margin-top: 0px;
+				margin-bottom: 0px;
+				color: grey;
+			}
+			
+
+			
+			strong {
+				color: rgb(100, 45, 100);
+			}
+			
+			ul {
+				padding-left: 300pw;
+				list-style-type: circle;
+			}
+			
+			li {
+			
+			}
+			
+			.barre {
+				text-align: center;
+			}
+			
+			.barre a {
+				text-decoration: line-through;
+				color: rgb(127,0,0);
+			}
+			
+			.erreur {
+				padding-left: 40px;
+				min-height: 40px;
+				background: no-repeat left url("warning.png");
+			}
+			
+			article {
+				display : block;
+				border: 2px black solid;
+				border-radius: 5px;
+				max-width: 48%;
+				margin-top: 20px;
+				margin-bottom: 20px;
+				padding: 5px;
+				background-color: rgb(225, 236, 236);
+				text-align: justify;
+				box-shadow: -2px -2px 5px rgb(120, 120, 120);
+			}
+			
+			article:nth-child(3n+0) {
+				margin-left: 20%;
+			}
+			
+			article:nth-child(3n+1) {
+				margin-left: 50%;
+				margin-right: 10px;
+			}
+			
+			
+			q {
+				margin: 50px;
+				font-style: italic;
+			}
+			
+			article h3 {
+				text-align: right;
+				font-size: 1em;
+			}
+			
+			#yo {
+				position: fixed;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				text-align: center;
+				background-color: white;
+				padding: 10px;
+				border: 5px solid black;
+				border-radius: 5px;
+				/*visibility: hidden;*/
+				display: none;
+			}
+			div a {
+				text-decoration: none;
+				color: blue;
+			}
+
+			footer {
+				margin-top: 20px;
+				display: table;
+				background-color: rgba(255,255,255,0.5);
+				margin-right: 0px;
+				margin-left: auto;
+				box-shadow: -2px -2px 5px rgb(120, 120, 120);
+				border-radius: 5px;
+				margin-bottom: 10px;
+				padding: 5px;
+			}
+
+		</style>
+		
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">-->
+	
+	</head>
+	<body>
+		<header>
+			<img src="sqk.png" />
+		</header>
+		<menu>
+			<h2>Publicité</h2>
+			<a href="#" onclick="ouvrir();"><img src="shinkansen.jpg" /></a>
+			<h5>Nous vous remercions de ne pas utiliser de bloqueur de publicité.</h5>
+		</menu>
+		
+		<section class="gris">
+			<h2>Bienvenue sur SquonK.MOE</h2>
+			<p>Notre entreprise compte plus de <strong>5000 collaborateurs</strong> ainsi qu'un <strong>vaste porte-feuille client</strong>, dont les plus prestigieux.</p>
+			<p>Dans un monde qui évolue de plus en plus vite, depuis des générations, SquonK.MOE s'adapte au marché et aux exigences des clients pour offrir le meilleur.</p>
+			
+			<p>Découvrez nos garanties de qualité :</p>
+			<ul>
+				<li>Support intégralement en France</li>
+				<li>Aucune sous traitance</li>
+				<li>Des fournisseurs triés sur le volets</li>
+				<li>Des prix compétitifs</li>
+				<li>Service aprés vente 24h/24 7j/7</li>
+				<li>Des clients régionnals<!-- On ne sous traite pas et on a que des CDI en France, mais on embauche des gens qui ne savent pas parler français uniquement. -->, nationaux et même internationaux.
+			</ul>
+			
+			<p style="text-align: right; padding-top: 20px;"><strong><i>Vous aussi, faites confiance à SquonK.MOE pour vos futurs projets</i></strong></p>
+		</section>
+		
+		<section>
+			<h2>Devenir client</h2>
+			<p class="barre"><a href="#">Demander dès maintenant un devis gratuit !</a></p>
+			<p class="erreur">Attention : <em>Afin d'assurer la qualité de notre service, nous fermons temporairement l'accès à nos services à de nouveaux clients. Nous faisons de notre mieux pour accueillir rapidement de nouveaux clients sans mettre en péril la qualité de nos autres prestations.</em></p>
+		</section>
+		
+		<section style="width: 80%;">
+			<h2>Témoignages clients</h2>
+			
+			<article>
+				<q>Grâce à SquonK.MOE, notre entreprise a pu faire des économies considérables. C'est à la fois un partenaire moins cher et plus compétent que la concurrence.</q>
+				<h3>M. CHOLB, Directeur</h3>
+			</article>
+			
+			<article>
+				<q>Le service client a su m'accompagner au moment où j'avais des problèmes et réagir très rapidement alors qu'il était dimanche.</q>
+				<h3>Mme. ARSACER, Chef de projet</h3>
+			</article>
+			
+			<article>
+				<q>Nous envisagions de faire des licenciements économiques. Nous avons changé de partenaire pour travailler avec SquonK.MOE et depuis notre entreprise enchaîne les embauches en CDI.</q>
+				<h3>M. HEYFA, DRH</h3>
+			</article>
+			
+			<article>
+				<q>Mon entreprise recourrait déjà aux services de votre entreprise. A titre personnel, j'ai d'abord souscris à SquonK.MOE puis j'ai résilié.
+				Le service client était très sympathique et a exécuté ma résiliation très rapidement. Aprés avoir essayé la conccurence, je suis finalement revenue. Votre respect du client, même en fin de contrat, est un marqueur de qualité.</q>
+				<h3>Mlle. MAISON, Particulière</h3>
+			</article>
+			
+			<article>
+				<q>Dans l'entreprise où je travaille, faire appel aux services de SquonK.MOE est un reflexe depuis des générations, et c'est pour d'excellentes raisons : le service est de qualité, le personnel est actif et compétent.</q>
+				<h3>M. YIN <!-- Monsieur YANG s'est marié et a pris le nom de famille sa femme. SquonK.MOE respecte cette décision en mettant son nouveau nom de famille -->, Responsable marketing</h3>
+			</article>
+		</section>
+		
+		<section style="width: 50%; margin-left: 40%;">
+			<h2>Entreprises</h2>
+			<p>Suite au fort succès de notre entreprise, nous souhaitons aider d'autres organisations à connaître le succès afin de dynamiser l'économie.</p>
+			<p>Ne manquez pas la parution future de notre livre <strong>Stratégie d'entreprise : bien définir son offre et sa cible marketing</strong> (couverture à venir).</p>
+
+			<p style="text-align: right; padding-top: 20px; padding-right: 10px;"><i><strong>Stratégie d'entreprise : bien définir son offre et sa cible marketing</strong>, en vente <strong>prochainement</strong></i></p>
+		</section>
+		
+		<footer>
+		<h5>Une question ? Une remarque ? Contact : contact[AT]squonk.moe</h5>
+		<h6>Attention le contenu de cette page est à titre purement non commercial.
+		<br />Il se peut que les services proposés ne soient pas disponibles et ne l'aient jamais étés</h6>
+		</footer>
+	
+		<div id="yo">
+		<center><iframe width="560" height="315" src="https://www.youtube.com/embed/U8YJGwsuJn8" frameborder="0" allowfullscreen></iframe></center>
+
+		<p><a href="#" onclick="fermer();">Fermer</a></p>
+		</div>
+	
+	<script type="text/javascript">
+	function ouvrir() {
+		var div = document.getElementById("yo");
+		div.style.display = "block";
+	}
+	
+	
+	function fermer() {
+		var div = document.getElementById("yo");
+		div.style.display = "none";
+	}
+	</script>
+
+	</body>
+</html>
