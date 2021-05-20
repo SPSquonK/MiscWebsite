@@ -1,0 +1,102 @@
+﻿<!doctype HTML>
+<html>
+
+	<head>
+		<title>Annie est moe</title>
+		<!-- Charset utf8 -->
+		
+		<style>
+			div {
+				/*margin-top: 50vh;*/
+				margin-left: auto;
+				margin-right: auto;
+				/*transform: translateY(-50%);*/
+				
+				position: absolute;
+				top: 50%;
+				left: 50%;	
+				transform: translate(-50%, -50%);
+			}
+			
+			p, h3, h4, h5 {
+				text-align: center;
+				font-weight: normal;
+			}
+			
+			h3 {
+				margin-bottom: 0px;
+			}
+			
+			h4, h5 {
+				margin-top: 0px;
+				margin-bottom: 0px;
+			}
+			
+			a {
+				font-weight: bold;
+				color: inherit;
+				text-decoration: inherit;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<div>
+			<p><a onClick="recharger()"><img id="Annie_image" /></a></p>
+			<h4 id="Annie_Credit"></h4>
+			<br>
+			<h4><a href="?yandere" class="hidden">Annie</a> est un personnage du jeu <a href="http://euw.leagueoflegends.com/">League of Legends</a>.</h4>
+			<h5>Votre artwork est trop moe pour apparaître ou ne pas apparaître ? contact[AT]annie.moe</h5>
+		</div>
+	</body>
+</html>
+<script>
+	function apply_an_annie_image(annie_image) {
+	
+		var getCredit = function() {
+			if (annie_image.auteur == undefined) {
+				return '';
+			}
+		
+			return 'Artiste : <a href="'+ annie_image.lien + '">' + annie_image.auteur + '</a>'
+		};
+	
+	
+		document.getElementById('Annie_image').src = '';
+		document.getElementById('Annie_image').src = annie_image.image;
+		document.getElementById('Annie_Credit').innerHTML = getCredit(annie_image);
+		document.body.style.backgroundColor = annie_image.bg;
+		document.body.style.color = annie_image.ecriture;
+	}
+	
+	
+	var images_de_annie = [
+		{image: 'anniegasai.jpg', bg: '#3A0000', ecriture: 'white'},
+		{image: 'vine_1_lq_rick_by_anjolendario-d9b85od.jpg', auteur: 'anjolendario', lien: 'http://anjolendario.deviantart.com/', bg:'#CBE5FC', ecriture:'black'},
+		{image: 'Cicely.jpg', auteur: 'Cicely', lien: 'http://www.pixiv.net/member.php?id=1420241', bg:'black', ecriture:'white'},
+		{image: 'Annie.(League.of.Legends).full.1838394.jpg', bg:'white', ecriture:'black'},
+		{image: 'Citemer.jpg', auteur: 'Citemer', lien: 'http://citemer.deviantart.com', bg:'rgb(45, 62, 106)', ecriture:'white'},
+		{image: 'Dakun.jpg', auteur: 'Dakun', lien: 'http://dakun87.deviantart.com', bg:'rgb(223, 212, 191)', ecriture:'black'},
+		{image: 'Oiru.jpg', auteur: 'Oiru', lien: 'http://www.pixiv.net/member.php?id=2120007', bg:'white', ecriture:'black'},
+		{image: 'Opalheart.jpg', auteur: 'Opalheart', lien: 'http://blog.naver.com/opalheart', bg:'white', ecriture:'black'},
+		{image: 'Opalheart2.jpg', auteur: 'Opalheart', lien: 'http://blog.naver.com/opalheart', bg:'white', ecriture:'black'}
+	];
+	
+	var current_value = -1;
+	
+	function recharger() {
+		var new_value;
+		do {
+			new_value = Math.floor(Math.random() * images_de_annie.length)
+		} while (new_value == current_value);
+	
+		var image_de_annie = images_de_annie[new_value];
+		
+		apply_an_annie_image(image_de_annie);
+		
+		current_value = new_value;
+	}
+	
+	recharger();
+</script>
