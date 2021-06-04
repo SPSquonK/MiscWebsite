@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cookie Clicker without Cookies</title>
+  </head>
+  <body>
+    <img src="citation.png" /> <!-- Also, what are touchpads? -->
+    <p id="best">Click to log the position</p>
+    <p id="log"></p>
+    <script>
+      let lastPosition = undefined;
+      let score = 0;
+      let best = 0;
+
+      document.onclick = function(event) {
+        const log = document.getElementById("log");
+
+        thisPosition = `(${event.clientX},${event.clientY})`;
+        
+        if (lastPosition !== thisPosition) {
+          log.innerHTML = "<strong>" + thisPosition + "</strong>" + "<br>" + log.innerHTML;
+          score = 0;
+        } else {
+          log.innerHTML = thisPosition + "<br>" + log.innerHTML;
+        }
+
+        ++score;
+
+        if (best < score) best = score;
+
+        document.getElementById("best").innerHTML = `You clicked ${score} successive times at the same position. Your best score is ${best}.`
+        
+        lastPosition = thisPosition;
+      }
+    </script>
+  </body>
+</html>
