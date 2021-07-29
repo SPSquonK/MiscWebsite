@@ -56,9 +56,6 @@
 				font-size: 1.1em;
 				color: darkblue;
 				font-weight: bold;
-//				 text-shadow: rgb(0, 30, 60) 0px 2px, rgb(0, 30, 60) 2px 0px, rgb(0, 30, 60) -2px 0px, 
-//    rgb(0, 30, 60) 0px -2px, rgb(0, 30, 60) -1.4px -1.4px, rgb(0, 30, 60) 1.4px 1.4px, 
-//    rgb(0, 30, 60) 1.4px -1.4px, rgb(0, 30, 60) -1.4px 1.4px; 
 				margin-bottom: 0;
 			}
 			
@@ -229,11 +226,30 @@
 			<div id="presentation">
 				<h1>SP SQUONK</h1> <!-- / Shiho / PsY / Lama / S Smile / Gigamaxed Porygon -->
 				<p class="othernames"><span style="font-size:1.5em">Shiho - PsY</span>
-					<br>Lama - S Smile - Gigamaxed Porygon</p>
+					<br>Lama - S Smile - Porygon is a duck</p>
 				
+				<h2>Mes actualités</h2>
+				<p>
+					<strong>2021-07-29</strong>
+					<br>Le peuple s'attend à ce que je sorte un serveur privé FlyFF. A la
+					place, je vous propose un serveur privé FFWTT, un jeu de Triple Triad
+					en ligne (c'est le jeu de cartes de Final Fantasy VIII). Et comme je
+					n'ai aucun joueur, j'ai développé un robot que vous pouvez librement
+					affronter et qui est pas trop mauvais.
+				</p>
+
+				<p><strong>
+					<img src="v2/icones/ffwtt.png"> <a href="https://esthar.fr">Découvrir Esthar</a> <img src="v2/icones/ffwtt.png">
+				</strong></p>
+
+				<!--
 				<h2>Présentation</h2>
-				<!--<p>Quand tu regardes mon site tu vois quoi ?
-					<br>Tu vois rien parce qu'il y a rien. Il y a pas d'amour, il y a pas de pitié, il y a rien je m'en bat les couilles. Il y a que de la haine.</p>-->
+				<p>
+					Quand tu regardes mon site tu vois quoi ?
+					<br>
+					Tu vois rien parce qu'il y a rien. Il y a pas d'amour, il y a pas de
+					pitié, il y a rien je m'en bat les couilles. Il y a que de la haine.
+				</p>
 
 				<p>Bonjour à toi jeune entrepreneur. Si aujourd'hui je me permet de te contacter c'est pour une
 					raison très simple. Savais-tu que 99% de la population ne connaissait pas mon oeuvre ? Alors poses toi les bonnes questions.
@@ -242,13 +258,10 @@
 					Moi je pense la question elle est vite répondue. Alors soit tu me suis, soit tu continues
 					à jouer au dernier jeu du moment. Bisous.
 				</p>
+				-->
 				
-				<p><a href="http://squonk.fr/Tortank/SquonK_TortankDansLesExtinctionsDIncendies.pdf">SquonK (2020). Efficacité de Tortank et de ses canons dans l'extinction des incendies.</a></p>
-				
-				<!-- JE NE TESTE PAS DU TOUT SI GOOGLE VA ME METTRE DANS GOOGLE SCHOLAR LOL -->
-
 				<h2>Mes sites</h2>
-                <table id="website_table"></table>
+        <table id="website_table"></table>
 				
 				<h2>Speedrun</h2>
 
@@ -322,7 +335,7 @@
 					<tr>
 						<td>Pokemon Soulstones</td>
 						<td>PC Windows</td>
-						<td>Any%</td>
+						<td>Main game%</td>
 						<td>2:28:36</td>
 						<td><a href="https://youtu.be/p-DlKYX4wl8">Youtube</a></td>
 					</tr>
@@ -345,9 +358,12 @@
 					<br />Le but est simple : il faut que la ligne du haut soit entièrement noire.</p>
 
 				<h2>Contact</h2>
-				<p><em>Mail</em> : sp symbole avec le a entouré sqk.fr
+				<p>
+					<em>Mail</em> : sp symbole avec le a entouré sqk.fr
 					<br><em>Discord</em> : SquonK#2296
 				</p>
+
+				<!--<p>Sans aucun contexte, je lache ce mot pour que Google fasse le lien : FFWTT.</p> -->
 
 				<h2></h2>
 				<div style="height: 550px;"></div>
@@ -384,6 +400,10 @@
 	<script type="text/javascript">
 		function onload() {
 			let web_list = [
+				{ "l": "Mes machins jouables", "c" : [
+					{ image: "ffwtt.png"      , link: "https://www.esthar.fr"                                          , title: "Esthar - Serveur de Triple Triad" },
+					{ image: "26.png"         , link: "http://www.deuxsix.fr/"                                         , title: "Le Deux Six"        },
+				]},
 				{ "l": "Memes", "c" : [
 					{ image: "annie.png"      , link: "https://www.annie.moe"                                          , title: "Annie.moe"          },
 					{ image: "Moe.png"        , link: "https://www.squonK.moe"                                         , title: "SquonK.moe"         },
@@ -393,7 +413,6 @@
 					{ image: "wordpress.png"  , link: "https://blog.squonk.fr"                                         , title: "Skyblog"            },
 					{ image: "", link: "pokemon/", title: "Sauvegardes de fangame Pokémon" },
 					{ image: "lama.jpg"       , link: "https://img.squonk.moe"                                         , title: "Galerie"            },
-					{ image: "26.png"         , link: "http://www.deuxsix.fr/"                                         , title: "Le Deux Six"        },
 					{ image: "zurithor.png"   , link: "http://zurithor.squonk.moe/"                                    , title: "Les hommes bleus"   },
 					{ image: "sflyff.png"     , link: "https://www.sà.fr"                                              , title: "Dev Blog de SFlyFF" },
 					{ image: "Github.png"     , link: "https://www.github.com/SPSquonK"                                , title: "Github"             }
