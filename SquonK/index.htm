@@ -224,41 +224,9 @@
 	<body onload="onload()">
 		<div id="main">
 			<div id="presentation">
-				<h1>SP SQUONK</h1> <!-- / Shiho / PsY / Lama / S Smile / Gigamaxed Porygon -->
-				<p class="othernames"><span style="font-size:1.5em">Shiho - PsY</span>
+				<h1 id="name_main">SP SQUONK</h1> 
+				<p class="othernames"><span style="font-size:1.5em" id="name_other">Shiho - PsY</span>
 					<br>Lama - S Smile - Porygon is a duck</p>
-				
-				<h2>Mes actualités</h2>
-				<p>
-					<strong>2021-07-29</strong>
-					<br>Le peuple s'attend à ce que je sorte un serveur privé FlyFF. A la
-					place, je vous propose un serveur privé FFWTT, un jeu de Triple Triad
-					en ligne (c'est le jeu de cartes de Final Fantasy VIII). Et comme je
-					n'ai aucun joueur, j'ai développé un robot que vous pouvez librement
-					affronter et qui est pas trop mauvais.
-				</p>
-
-				<p><strong>
-					<img src="v2/icones/ffwtt.png"> <a href="https://esthar.fr">Découvrir Esthar</a> <img src="v2/icones/ffwtt.png">
-				</strong></p>
-
-				<!--
-				<h2>Présentation</h2>
-				<p>
-					Quand tu regardes mon site tu vois quoi ?
-					<br>
-					Tu vois rien parce qu'il y a rien. Il y a pas d'amour, il y a pas de
-					pitié, il y a rien je m'en bat les couilles. Il y a que de la haine.
-				</p>
-
-				<p>Bonjour à toi jeune entrepreneur. Si aujourd'hui je me permet de te contacter c'est pour une
-					raison très simple. Savais-tu que 99% de la population ne connaissait pas mon oeuvre ? Alors poses toi les bonnes questions.
-					Est-ce que tu préfères continuer à être un ignorant qui regarde la télé, ou commencer très
-					rapidement à te cultiver avec moi et avoir l'opportunité de jouer au <a href="https://www.deuxsix.fr">Deux Six</a> ?
-					Moi je pense la question elle est vite répondue. Alors soit tu me suis, soit tu continues
-					à jouer au dernier jeu du moment. Bisous.
-				</p>
-				-->
 				
 				<h2>Mes sites</h2>
         <table id="website_table"></table>
@@ -363,8 +331,6 @@
 					<br><em>Discord</em> : SquonK#2296
 				</p>
 
-				<!--<p>Sans aucun contexte, je lache ce mot pour que Google fasse le lien : FFWTT.</p> -->
-
 				<h2></h2>
 				<div style="height: 550px;"></div>
 			</div>	
@@ -386,11 +352,14 @@
 				<tr>
 					<td><a href="{{ link }}">
 						{{#image}}
-							<img src="v2/icones/{{ image }}" {{{style}}}></a>
+							<img src="v2/icones/{{ image }}" {{{style}}}>
 						{{/image}}
-					</td>
+					</a></td>
 					<td class="title">
 						<a href="{{ link }}">{{ title }}</a>
+						{{#link2}}
+						- <a href="{{ link2 }}">{{ title2 }}</a>
+						{{/link2}}
 					</td>
 				</tr>
 			{{/c}}
@@ -411,10 +380,13 @@
 				]},
 				{ "l": "Contenu", "c" : [
 					{ image: "wordpress.png"  , link: "https://blog.squonk.fr"                                         , title: "Skyblog"            },
-					{ image: "", link: "pokemon/", title: "Sauvegardes de fangame Pokémon" },
+					{ image: "", link: "https://squonK.fr/pokemon/", title: "Sauvegardes de fangame Pokémon" },
 					{ image: "lama.jpg"       , link: "https://img.squonk.moe"                                         , title: "Galerie"            },
 					{ image: "zurithor.png"   , link: "http://zurithor.squonk.moe/"                                    , title: "Les hommes bleus"   },
-					{ image: "sflyff.png"     , link: "https://www.sà.fr"                                              , title: "Dev Blog de SFlyFF" },
+					{ image: "sflyff.png"     ,
+							link: "https://www.sflyff.fr", title: "SFlyFF",
+							link2: "https://sà.fr"       , title2: "DevBlog"
+					},
 					{ image: "Github.png"     , link: "https://www.github.com/SPSquonK"                                , title: "Github"             }
 				]},
 				{ "l": "Media", "c" : [
@@ -425,9 +397,20 @@
 				{ "l": "Réseaux Sociaux", "c" : [
 					{ image: "twitter.png"    , link: "https://twitter.com/spsquonk"                                   , title: "Twitter"            },
 					{ image: "YoutubeAZAF.png", link: "https://www.youtube.com/channel/UCwMBM2g3WDJPp750II5GDVw/videos", title: "Youtube"            },
-					{ image: "Twitch.png"     , link: "http://www.twitch.tv/sp_squonk"                                 , title: "Twitch"             }
+					{ image: "Twitch.png"     , link: "https://www.twitch.tv/sp_squonk"                                , title: "Twitch"             }
 				]}
 			];
+
+			const host = window.location.hostname;
+			if (host) {
+				if (host.lastIndexOf("shiho.fr") + "shiho.fr".length === host.length) {
+					document.getElementById("name_main").innerText = "SP S̶̢͎̦̙͔͉̥̰͇̺̺̒͑̇̇͑̉͌̈H̸̨̭̦̝̉̄̓̋̋̚I̵̻̫͍̮̖̱͔̎̉͌͂͋̓́̃͘͘H̵̻͌̉̎Ǫ̴̪͎̩̥̬̬̫̒̂̓̈̏̔̅͜͠";
+					document.getElementById("name_other").innerText = "PsY - S̸̨̛̤̪̤̮̮̥͙͕̝̯̫̏̃̈́̐̀̆̋̃͝q̶̡͙̣̼̤̯̺̼̮̙̜̫̋̾̏̽̅͆u̸̡̦͓͕̘̹̲͑͋̓̿̓͛͆̐̇͘ò̶̧̼̹̯̩͖̫̻̺̫̤̩̖n̴̨̯͔̱̗͂̅͛̀̂̓̑͋̅̓̊̊̀͜ͅK̷̼̖̭̼̳̙͍̙͎̼̩̏̐͘͝ͅ";
+
+					const squonkmoe = web_list.flatMap(category => category.c).find(line => line.title === 'SquonK.moe');
+					if (squonkmoe) squonkmoe.title = "Ŝ̵̢̫̤̭̰͎̣͉͓̟̬̩̞̗͕͛̾̅͐͋͌̇̍̿͊́̎̃̈q̸̠͍̱̳̓̅̓͊͝u̴̢̿͐̌o̷̺̳̠̰̮͗̇̿̾̓̎̅̈́̒͋͜͠ͅn̵̨͓̟͚̤̭̤̥͓̞̝̲͍̥̍̃̓̋̓͜͝K̴̛͍̹̻̜̩̫̪͓͉̺̪͌́̈́̎̆̃̊̕ͅ.̷̢̱͔̯̗̳̜̟͎͍̲̜̦̄̑̍̉͑͐̎͛̀̑͝m̴̢̡̙̲̭̝̲̣̗̥͎̪͎̩̒͆͛͐́̉̑̋̊͆̚͘͠o̷̖̙̤̭̤͕͈̙̹͑͒̽̄͝e̵̢̢̛͙͎̟͙̝̝̲̹͇̝̪̒̉̀̀͘͝";
+				}
+			}
 			
 			let template = document.getElementById("template-website").innerText;
 			let rendered = Mustache.render(template, web_list);
