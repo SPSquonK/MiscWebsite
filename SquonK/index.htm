@@ -225,8 +225,16 @@
 		<div id="main">
 			<div id="presentation">
 				<h1 id="name_main">SP SQUONK</h1> 
-				<p class="othernames"><span style="font-size:1.5em" id="name_other">Shiho - PsY</span>
-					<br>Lama - S Smile - Porygon is a duck</p>
+				<p class="othernames">
+					<span style="font-size:1.5em" id="name_other">Shiho - PsY</span>
+				</p>
+				
+				
+				<h2>Contact</h2>
+				<p>
+					<em>Mail</em> : <span title="Les spammers, craignez le jour où je deviendrais Président de la République">sp(alt + 64)sqk.fr</span>
+					<br><em>Discord</em> : <span title="Les discriminants, ce système incroyable">SquonK#2296</span>
+				</p>
 				
 				<h2>Mes sites</h2>
         <table id="website_table"></table>
@@ -325,18 +333,61 @@
 					<br />Mais comme je veux aussi une femelle puissante, si tu penses en être une, je t'invite à jouer à ce petit jeu.
 					<br />Le but est simple : il faut que la ligne du haut soit entièrement noire.</p>
 
-				<h2>Contact</h2>
-				<p>
-					<em>Mail</em> : sp symbole avec le a entouré sqk.fr
-					<br><em>Discord</em> : SquonK#2296
-				</p>
 
 				<h2></h2>
-				<div style="height: 550px;"></div>
+				<a href="https://deuxsix.fr" style="text-decoration: none; color: blue; font-weight: bold;">
+				<span id="propagande" style="font-variant: small-caps; text-decoration: none;"></span>
+				<div style="height: 550px;" ></div>
+				</a>
 			</div>	
 		</div>
 		
 	</body>
+	<script>
+	{
+	const phrasesPropagande = [
+  { phrase: "Une oeuvre qui a révolutionné ma vision du monde", auteur: "Quentin Tarantino" },
+  { phrase: "Une expérience immersive à couper le souffle", auteur: "Elon Musk" },
+  { phrase: "Un chef-d'œuvre qui éveille la passion du joueur", auteur: "Beyoncé" },
+  { phrase: "Une prouesse technologique d'une envergure sans précédent", auteur: "Bill Gates" },
+  { phrase: "Un tour de force artistique qui transcende les frontières de la réalité", auteur: "Salvador Dalí" },
+  { phrase: "Une aventure captivante qui vous plonge au cœur de l'action", auteur: "Dwayne Johnson" },
+  { phrase: "Un joyau du jeu vidéo qui réinvente les règles du genre", auteur: "J.K. Rowling" },
+  { phrase: "Une révolution ludique qui redéfinit les attentes des joueurs", auteur: "Steve Jobs" },
+  { phrase: "Un univers fascinant qui captive l'esprit et l'imagination", auteur: "Stephen Spielberg" },
+  { phrase: "Une expérience immersive qui transcende les clivages politiques", auteur: "Emmanuel Macron" },
+  { phrase: "Un jeu qui captive l'attention et inspire la réflexion, une véritable prouesse intellectuelle", auteur: "Marine Le Pen" },
+  { phrase: "Une œuvre d'art interactive qui défie les conventions et ouvre de nouvelles voies", auteur: "Banksy" },
+  { phrase: "Une prouesse narrative qui vous transporte dans un autre monde", auteur: "Christopher Nolan" },
+  { phrase: "Une expérience sensorielle hors du commun", auteur: "Rihanna" },
+  { phrase: "Un jeu qui repousse les limites de l'imagination et vous transporte dans un monde inédit", auteur: "Leonardo DiCaprio" },
+  { phrase: "Une prouesse créative qui éveille l'imagination et pousse les frontières du réel", auteur: "Tim Burton" },
+  { phrase: "Ce jeu est un peu à l'ouest vis à vis des véritables enjeux de la société actuelle. 1/20 pour l'effort.", auteur: "Kanye West" },
+//  { phrase: "Une expérience de jeu immersive et exaltante, un véritable tour de force artistique", auteur: "Kanye West" },
+  { phrase: "Un jeu qui repousse les limites de l'imaginaire et vous transporte dans des univers fascinants", auteur: "Guillermo del Toro" },
+  { phrase: "Une œuvre visionnaire qui redéfinit les standards de l'industrie vidéoludique", auteur: "Steven Spielberg" },
+  { phrase: "Une expérience vidéoludique qui transcende les limites du réel", auteur: "Neil deGrasse Tyson" },
+  { phrase: "Un jeu qui stimule l'engagement citoyen et incite à la participation active", auteur: "Anne Hidalgo" },
+  { phrase: "Une prouesse artistique qui met en lumière les enjeux sociétaux contemporains", auteur: "Jean-Yves Le Drian" },
+  { phrase: "Un voyage captivant au cœur des décisions politiques, un véritable apprentissage démocratique", auteur: "Édouard Philippe" },
+  { phrase: "Une œuvre numérique qui encourage le dialogue et favorise le vivre-ensemble", auteur: "Ségolène Royal" },
+  { phrase: "Un jeu qui célèbre la diversité et promeut l'égalité, un véritable acte politique", auteur: "Raphaël Glucksmann" },
+  { phrase: "Une expérience qui transcende les genres, inspiré par Fouiny Babe en personne", auteur: "La Fouine" },
+  { phrase: "Une réflexion profonde sur la société contemporaine, Alain Soral approuve Le 26", auteur: "Alain Soral" },
+  { phrase: "Un univers d'entrepreneuriat où vous pouvez conquérir le monde à ma manière", auteur: "Jeff Bezos" },
+  { phrase: "Une aventure mystérieuse qui vous fait découvrir des secrets fascinants", auteur: "La Voisine du Dessous" },
+  { phrase: "Un jeu avec des combats épiques, surtout quand il y a Tony", auteur: "Tony" }
+];
+
+
+		const phraseAleatoire = phrasesPropagande[Math.floor(Math.random() * phrasesPropagande.length)];
+	
+		const divPropagande = document.getElementById('propagande');
+		divPropagande.textContent  = `"${phraseAleatoire.phrase}" - ${phraseAleatoire.auteur}`;
+		
+	}
+	</script>
+	
 	<script src="v2/game.js"></script>
 	<script>
 		initialiserJeu();
